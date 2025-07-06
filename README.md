@@ -73,31 +73,8 @@ Runs on **every push** and **pull request** to `main`.
   - Surefire Reports (TestNG)
   - ExtentReports (HTML)
 
-
-BookStoreAPIAutomationCo/
-├── .github/
-│   └── workflows/
-│       └── book-store-automation.yml     # GitHub CI/CD pipeline config
-├── src/
-│   ├── main/
-│   │   └── java/com/book/test/
-│   │       ├── config/                   # Configuration loading
-│   │       ├── constants/                # API endpoints and constants
-│   │       ├── context/                  # User, token, and test data context
-│   │       ├── data/                     # Test data generators
-│   │       ├── model/                    # Request/response POJOs
-│   │       └── req/                      # Reusable request builders for API payloads
-│   └── test/
-│       └── java/com/book/test/
-│           ├── dataprovider/             # DataProviders for parameterized tests
-│           ├── helper/                   # Assertion and logging helpers
-│           ├── report/                   # Extent report logger
-│           └── [Test Classes]            # API test classes
-├── config.properties                     # Environment configurations
-├── testng.xml                            # TestNG suite configuration
-├── pom.xml                               # Maven dependencies and plugins
-└── README.md                             # Project documentation
-
+### Framework Structure
+![Sample Extent Report](screenshots/FrameworkStructure.JPG)
 
 ### How to Run the Tests
 - Prerequisites
