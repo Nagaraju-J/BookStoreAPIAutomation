@@ -58,6 +58,7 @@ The framework covers the following test scenarios for Health check, User and Boo
 | Managing test data collisions                                               | Validated payloads and added assertions to catch backend issues             |
 | No Delete Api for user, which increases the test users                      | Provide API for delete users or test cases to maintain first created users. |
 | Cross-class test dependencies                                               | Switched from dependsOnMethods to dependsOnGroups for better control        |
+| No Validation for input request. creating with empty email, book name etc   | Fix to be done on application                                               |
 
 ## CI/CD Pipeline
 
@@ -73,29 +74,29 @@ Runs on **every push** and **pull request** to `main`.
   - ExtentReports (HTML)
 
 
-### Framework Structure
 BookStoreAPIAutomationCo/
 ├── .github/
-│   ├── workflows/
-│   │   ├── book-store-automation.yml # github ci/cd
+│   └── workflows/
+│       └── book-store-automation.yml     # GitHub CI/CD pipeline config
 ├── src/
 │   ├── main/
-│   │   ├── java/com/book/test/
-│   │   │   ├── config/               # Configuration loading
-│   │   │   ├── constants/            # API endpoints and constants
-│   │   │   ├── context/              # User, Token and test data context
-│   │   │   ├── data/                 # Test data generators
-│   │   │   ├── model/                # Request/response POJOs
-│   │   │   └── req/                  # Contains reusable request builder classes for constructing API payloads.
+│   │   └── java/com/book/test/
+│   │       ├── config/                   # Configuration loading
+│   │       ├── constants/                # API endpoints and constants
+│   │       ├── context/                  # User, token, and test data context
+│   │       ├── data/                     # Test data generators
+│   │       ├── model/                    # Request/response POJOs
+│   │       └── req/                      # Reusable request builders for API payloads
 │   └── test/
-│       ├── java/com/book/test/       # Test classes
-│       ├── dataprovider/             # DataProviders for parameterized tests
-│       ├── helper/                   # Assertion and logging helpers
-│       └── report/                   # Extent report logger
-├── config.properties                 # Environment config
-├── testng.xml                        # TestNG suite configuration
-├── README.md                         # Readme
-└── pom.xml                           # Maven dependencies
+│       └── java/com/book/test/
+│           ├── dataprovider/             # DataProviders for parameterized tests
+│           ├── helper/                   # Assertion and logging helpers
+│           ├── report/                   # Extent report logger
+│           └── [Test Classes]            # API test classes
+├── config.properties                     # Environment configurations
+├── testng.xml                            # TestNG suite configuration
+├── pom.xml                               # Maven dependencies and plugins
+└── README.md                             # Project documentation
 
 
 ### How to Run the Tests
