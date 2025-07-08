@@ -116,7 +116,7 @@ Surefire Report
 ## 🤝  Contributing to repo:
 Fork the repo
 
-Create your feature branch (git checkout -b feature/story_number)
+Create your feature branch (git checkout -b feature/story_numbers)
 
 Commit and push
 
