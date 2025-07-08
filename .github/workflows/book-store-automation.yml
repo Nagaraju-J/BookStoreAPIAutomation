@@ -53,7 +53,6 @@ jobs:
         name: test-results
         path: |
           target/surefire-reports/
-          target/extent-reports/
         retention-days: 30
         
     - name: Upload test reports
@@ -72,7 +71,7 @@ jobs:
         if [ -d "target/surefire-reports" ]; then
           echo "TestNG reports generated in target/surefire-reports/"
         fi
-        if [ -d "target/extent-reports" ]; then
-          echo "Extent reports generated in target/extent-reports/"
+        if [ -d "test-output/" ]; then
+          echo "Extent reports generated in test-output/"
         fi
         echo "================================" 
